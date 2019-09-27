@@ -1,0 +1,1 @@
+The solution needs to include a quick readme file describing exact steps we should take to execute and test the application. We will not be able to test your project in a Windows environment, please target OS.X or Linux.
