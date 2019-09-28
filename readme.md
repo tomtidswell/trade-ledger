@@ -12,11 +12,15 @@
 ```
 yarn
 ```
-3. Serve it to localhost
+3. Add an .env file in the route of the project and include the guid for the webservice access. The format should be:
+```
+GUID=00000000-0000-0000-0000-000000000000
+```
+4. Serve it to localhost
 ```
 yarn serve
 ```
-4. Webpack should launch the dev server automatically, if it doesnt, launch the [localhost](http://localhost:8000)
+5. Webpack should launch the dev server automatically, if it doesnt, launch the [localhost](http://localhost:8000)
 
 # Testing
 ## Informal Testing
