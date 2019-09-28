@@ -1,8 +1,46 @@
 body{
   padding: 1em;
 }
-.card-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+a, a:visited, a:hover, a:active, a:focus{
+  color:#3b4351;
+  outline: none;
+  text-decoration: none;
+}
+.card{
+  border-bottom-width: 0;
+  .card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-body{
+    padding-top: 0;
+  }
+  &:last-child{
+    border-bottom-width: .05rem;
+  }
+  &.card-result:hover{
+    background-color: #eee;
+    cursor: pointer;
+  }
+}
+.panel.search-panel{
+  max-width: 600px;
+  margin: 0 auto;
+  .panel-header{
+    padding-bottom: 0;
+  }
+  .panel-body{
+    padding-bottom: 0.8rem;
+  }
+}
+.panel.show-panel{
+  max-width: 600px;
+  margin: 0 auto;
+  .tile{
+    padding: 5px 0;
+  }
+  .panel-body{
+    padding-bottom: 0.8rem;
+  }
 }
