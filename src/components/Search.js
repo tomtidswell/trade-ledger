@@ -36,7 +36,7 @@ class Search extends Component{
 
     // work out which type of search to run... name or abn, using the regex
     if (this.abnRegex.test(this.state.searchString))
-      jsonp(`https://abr.business.gov.au/json/AbnDetails.aspx?abn=${this.state.searchString}&guid=b6242120-5bce-4b10-9839-d3045a7682da`, null, (err, data) => {
+      jsonp(`https://abr.business.gov.au/json/AbnDetails.aspx?abn=${this.state.searchString}&guid=${process.env.GUID}`, null, (err, data) => {
         // handle some of the empty returns
         if (!data) return this.setState({ companies: [], errorMessage: 'No company found for that ABN' })
         if (data.Message) return this.setState({ companies: [], errorMessage: data.Message })
@@ -52,7 +52,7 @@ class Search extends Component{
       })
     else
       //improve this request later to handle any errors, but I couldnt find a request which caused an error
-      jsonp(`https://www.abr.business.gov.au/json/MatchingNames.aspx?name=${this.state.searchString}&maxResults=5&guid=b6242120-5bce-4b10-9839-d3045a7682da`, null, (err, data) => {
+      jsonp(`https://www.abr.business.gov.au/json/MatchingNames.aspx?name=${this.state.searchString}&maxResults=5&guid=${process.env.GUID}`, null, (err, data) => {
         //handle the null returns, and the API error messaging
         if (!data) return this.setState({ companies: [], errorMessage: 'No company found with that name' })
         if (data.Names.length === 0) return this.setState({ companies: [], errorMessage: 'No company found with that name' })
@@ -78,6 +78,7 @@ class Search extends Component{
           <input type="text"
             className="form-input"
             onChange={this.searchChange}
+            name="businessName"
             value={searchString}
             placeholder="Search" />
         </div>

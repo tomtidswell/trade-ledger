@@ -22,9 +22,9 @@ const Company = (props) => {
       setError('')
     }
   }
-
+  
   // make the jsonp call if there is an ID passed in, and also only if we havent set either the error or data
-  if (props.match.params.id && !data && !error) jsonp(`https://abr.business.gov.au/json/AbnDetails.aspx?abn=${props.match.params.id}&guid=b6242120-5bce-4b10-9839-d3045a7682da`, null, handleResponse)
+  if (props.match.params.id && !data && !error) jsonp(`https://abr.business.gov.au/json/AbnDetails.aspx?abn=${props.match.params.id}&guid=${process.env.GUID}`, null, handleResponse)
 
 
   const inputAbn = props.match.params.id
@@ -36,7 +36,7 @@ const Company = (props) => {
       <div className="panel-header text-center">
         <Link to="/"><figure className="avatar" data-initial="TL"></figure></Link>
         <div className="panel-title h5">Business Search</div>
-        <div className="panel-subtitle">Results for: {inputAbn}</div>
+        <div className="panel-subtitle">Results for ABN: {inputAbn}</div>
         <div className="panel-title h5">
           <button className="btn btn-link loading">loading</button>
         </div>
@@ -50,7 +50,7 @@ const Company = (props) => {
       <div className="panel-header text-center">
         <Link to="/"><figure className="avatar" data-initial="TL"></figure></Link>
         <div className="panel-title h5">Business Search</div>
-        <div className="panel-subtitle">Results for: {inputAbn}</div>
+        <div className="panel-subtitle">Results for ABN: {inputAbn}</div>
         <div className="panel-title h5">{error}</div>
       </div>
     </div>
@@ -62,7 +62,7 @@ const Company = (props) => {
       <div className="panel-header text-center">
         <Link to="/"><figure className="avatar" data-initial="TL"></figure></Link>
         <div className="panel-title h5">Business Search</div>
-        <div className="panel-subtitle">Results for: {data.Abn}</div>
+        <div className="panel-subtitle">Results for ABN: {data.Abn}</div>
         <div className="panel-title h2">{data.BusinessName[0]}</div>
       </div>
       <div className="panel-body">
