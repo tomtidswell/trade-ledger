@@ -4,8 +4,15 @@
 - As a user, when I type in an ABN I should be shown the matching company.
 - For the above information, connect to an [external business lookup API](https://abr.business.gov.au/json/)
 
+# Author's note
 
-# Installation
+* I spent one day working on this app
+* I met all of the requirements
+* I am new to React Hooks, however I used them for one of the components of this app to demonstrate my ability to pick up new concepts quickly
+* I included mocha testing of the app, but it is limited in scope, and I ran into an issue
+
+
+# Installation and testing
 1. Download or clone the repository to your local machine from github
 
 2. Grab the packages from yarn
@@ -20,12 +27,13 @@ GUID=00000000-0000-0000-0000-000000000000
 ```
 yarn serve
 ```
-5. Webpack should launch the dev server automatically, if it doesnt, launch the [localhost](http://localhost:8000)
+5. Webpack should launch the dev server automatically, if it doesnt, [launch the localhost manually](http://localhost:8000)
 
-# Testing
+It's ready to use.
+
 ## Informal Testing
 
-Once the app is open, type in the search bar to find some results. It can be a little slow.
+Once the app is open, type in the search bar to find some results. *It can be a little slow*. See [below](#key-features) for a run down of the best features to test. I completed all of the requirements, and am happy with the results. 
 
 ## Formal testing (unit)
 
